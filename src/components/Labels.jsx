@@ -3,6 +3,22 @@ import React from 'react'
 const Labels = () => {
 
     const cards = [{
+        id: "Principal1",
+        title: "Bienvenido",
+        subheader: "PYECOM",
+        descrition: `Esta presentacion esta realizada con tecnologias React, Gsap, Blender, etc.`,
+        ml: "1k",
+        points: ["extreme", "extreme", "extreme"],
+      },
+      {
+        id: "Principal2",
+        title: "3D",
+        subheader: "PYECOM",
+        descrition: `Creado por Piero Guere Arzapalo - ImpulsoSmart`,
+        ml: "1k",
+        points: ["extreme", "extreme", "extreme"],
+      },
+      {
         id: "Classic_Card",
         title: "Classic",
         subheader: "Nuka-cola",

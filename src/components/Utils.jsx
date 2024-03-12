@@ -53,6 +53,24 @@ export const LoadTextures = (imagePaths) => {
 export const GenerateAnimations = (scene, colors, cristalMaterial, sodaMaterial, brandMaterial, textures) => {
   const Animations = [// Init Animations - Page 0
   {
+    target: document.getElementById("Principal1"),
+    pointTime: 0.1,
+    animationsProperties: {
+      opacity: 1,
+      left: "15%",
+      onUpdate: () => {},
+    },
+  },
+  {
+    target: document.getElementById("Principal2"),
+    pointTime: 0.1,
+    animationsProperties: {
+      opacity: 1,
+      left: "75%",
+      onUpdate: () => {},
+    },
+  },
+  {
     target: scene.getObjectByName("BottleGroup").position,
     pointTime: 0,
     animationsProperties: {
@@ -64,7 +82,7 @@ export const GenerateAnimations = (scene, colors, cristalMaterial, sodaMaterial,
     target: scene.getObjectByName("BottleGroup").rotation,
     pointTime: 0,
     animationsProperties: {
-      y: 0,
+      y: 8,
       onUpdate: () => {},
     },
   },
@@ -97,7 +115,27 @@ export const GenerateAnimations = (scene, colors, cristalMaterial, sodaMaterial,
     target: document.getElementById("bg_container"),
     pointTime: 0.1,
     animationsProperties: {
-      background: "#000000",
+      background: "#00FFFF",
+    },
+  },
+  {
+    target: document.getElementById("Principal1"),
+    pointTime: 1,
+    animationsProperties: {
+      opacity: 0,
+      left: "70%",
+      duration: 0.9,
+      onUpdate: () => {},
+    },
+  },
+  {
+    target: document.getElementById("Principal2"),
+    pointTime: 1,
+    animationsProperties: {
+      opacity: 0,
+      left: "45%",
+      duration: 0.9,
+      onUpdate: () => {},
     },
   },
 
@@ -135,7 +173,7 @@ export const GenerateAnimations = (scene, colors, cristalMaterial, sodaMaterial,
   },
   {
     target: colors,
-    pointTime: 2,
+    pointTime: 0.75,
     animationsProperties: {
       onUpdate: () => {
         brandMaterial.map = textures["Classic"];
