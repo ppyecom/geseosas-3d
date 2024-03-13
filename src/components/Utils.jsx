@@ -250,7 +250,7 @@ export const GenerateAnimations = (scene, colors, cristalMaterial, sodaMaterial,
   },
   {
     target: document.getElementById("Classic_Card"),
-    pointTime: 2.25,
+    pointTime: 2.45,
     animationsProperties: {
       opacity: 0,
       left: "50%",
