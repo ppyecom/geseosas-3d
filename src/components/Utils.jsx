@@ -411,8 +411,7 @@ export const GenerateAnimationsMobile = (scene, colors, cristalMaterial, sodaMat
     pointTime: 1,
     animationsProperties: {
       opacity: 0,
-      left: "90%",
-      top: "50%",
+      transform: "translateY(50%) translateX(90%)",
       duration: 0.9,
       onUpdate: () => {},
     },
@@ -422,8 +421,7 @@ export const GenerateAnimationsMobile = (scene, colors, cristalMaterial, sodaMat
     pointTime: 1,
     animationsProperties: {
       opacity: 0,
-      left:"90%",
-      top: "50%",
+      transform: "translateY(-50%) translateX(90%)",
       duration: 0.9,
       onUpdate: () => {},
     },
