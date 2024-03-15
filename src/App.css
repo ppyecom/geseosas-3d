@@ -41,7 +41,6 @@
 /* Labels cards */
 .label_card {
   max-width: 500px;
-  padding: 2rem;
   display: flex;
   flex-direction: column;
   gap: 18px;
@@ -106,4 +105,25 @@
 .canvas div div {
   -ms-overflow-style: none;
   scrollbar-width: none;
+  
+}
+
+@media screen and (max-width: 700px){
+
+  .text_header {
+    font-size: 50px;
+  }
+  
+   p .text_subheader {
+    font-size: 25px;
+  }
+  
+  .text_body {
+    display: none;
+  }
+
+  ul{
+    display: none;
+  }
+  
 }

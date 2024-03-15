@@ -1,6 +1,6 @@
 import React, { useLayoutEffect, useRef } from "react";
 import { useGLTF, useScroll } from "@react-three/drei";
-import { GenerateAnimations, GenerateInitMaterials, LoadTextures } from "./Utils";
+import { GenerateAnimations, GenerateAnimationsMobile, GenerateInitMaterials, LoadTextures } from "./Utils";
 import gsap, {Power2} from "gsap";
 import { useFrame, useThree } from "@react-three/fiber";
 
@@ -22,8 +22,10 @@ export default function Bottle(props) {
 
     useLayoutEffect( () => {
         const textures = LoadTextures(["FalloutBoy", "Classic", "Quantum", "Sunset"]);
-        const animations = GenerateAnimations(scene, colorMaterial, cristalMaterial, sodaMaterial, brandMaterial, textures);
-        animations.map( animation => {
+
+        if (window.innerWidth <= 700){
+          const animationsMobile = GenerateAnimationsMobile(scene, colorMaterial, cristalMaterial, sodaMaterial, brandMaterial, textures);
+          animationsMobile.map( animation => {
           timeline.to(
             animation.target, {
               ...animation.animationsProperties
@@ -31,6 +33,18 @@ export default function Bottle(props) {
             animation.pointTime
           )
         })
+        }else{
+          const animations = GenerateAnimations(scene, colorMaterial, cristalMaterial, sodaMaterial, brandMaterial, textures);
+          animations.map( animation => {
+          timeline.to(
+            animation.target, {
+              ...animation.animationsProperties
+            },
+            animation.pointTime
+          )
+        })
+        }
+        
     },[])
 
     useFrame( () => {

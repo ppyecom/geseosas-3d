@@ -50,7 +50,7 @@ const Labels = () => {
             {cards.map( (card) => (
                 <div id={card.id} key={card.id} className="label_card label_card--hidden">
                     <div>
-                        <h1 className="text_header">{card.title}</h1>
+                        <h1 id={card.title} className="text_header">{card.title}</h1>
                         <p className="text_subheader">{card.subheader}</p>
                         <p className="text_body">{card.descrition}</p>
                     </div>
