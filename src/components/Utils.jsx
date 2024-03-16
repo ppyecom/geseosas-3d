@@ -57,7 +57,7 @@ export const GenerateAnimations = (scene, colors, cristalMaterial, sodaMaterial,
     pointTime: 0.1,
     animationsProperties: {
       opacity: 1,
-      left: "15%",
+      left: "18%",
       onUpdate: () => {},
     },
   },
