@@ -16,7 +16,11 @@ const Scene = () => {
             <OrbitControls target={[0,2,0]} enableZoom={false} enableRotate={false}/>
             <Environment files={"./snowy_park_01_1k.hdr"} blur={0.5}/>
         </Canvas>
+        <div class="scroll-icon ex-1">
+	        <span class="wheel"></span>
     </div>
+    </div>
+    
     </>
   )
 }

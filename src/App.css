@@ -110,6 +110,43 @@
   
 }
 
+.scroll-icon {
+	position: relative;
+  bottom: 15%;
+  left : 46.7%;
+	width: 2em;
+	height: 4em;
+	border: .3em solid #fff;
+	border-radius: 2em;
+  box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.5);
+}
+
+.scroll-icon.ex-1 .wheel {
+	position: absolute;
+	left: 50%;
+	top: 15%;
+	width: .6em;
+	height: .6em;
+	background-color: #fff;
+	transform: translate(-50%, 0);
+	border-radius: .6em;
+  box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.5);
+	animation: ex-1-wheel 1s ease-in-out infinite;
+}
+@keyframes ex-1-wheel {
+	0% {
+		transform: translate(-50%, 0);
+		opacity: 0;
+	}
+	20%, 70% {
+		opacity: 1;
+	}
+	90%, 100% {
+		transform: translate(-50%, 150%);
+		opacity: 0;
+	}
+}
+
 @media screen and (max-width: 700px){
 
 
