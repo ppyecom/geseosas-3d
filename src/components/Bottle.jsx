@@ -3,28 +3,27 @@ import { useGLTF, useScroll } from "@react-three/drei";
 import { GenerateAnimations, GenerateAnimationsMobile, GenerateInitMaterials, LoadTextures } from "./Utils";
 import gsap, {Power2} from "gsap";
 import { useFrame, useThree } from "@react-three/fiber";
-import isMobile from "is-mobile";
+
 
 export default function Bottle(props) {
     
     const scene = useThree(state => state.scene)
     const timeline = gsap.timeline({defaults: {duration:1, ease: Power2.easeInOut}})
     const scroll = useScroll()
-
+    
     const colorMaterial = {
       cristal: "#8c8c8c",
       soda: "#000"
     }
 
     const {cristalMaterial, sodaMaterial, brandMaterial} = GenerateInitMaterials(colorMaterial)
-    const isMobileDevice = isMobile();
 
   const { nodes, materials } = useGLTF("/Bottle.glb");
 
     useLayoutEffect( () => {
         const textures = LoadTextures(["FalloutBoy", "Classic", "Quantum", "Sunset"]);
 
-        if (!isMobileDevice){
+        if (window.innerWidth <= 700){
           const animationsMobile = GenerateAnimationsMobile(scene, colorMaterial, cristalMaterial, sodaMaterial, brandMaterial, textures);
           animationsMobile.map( animation => {
           timeline.to(
@@ -49,9 +48,7 @@ export default function Bottle(props) {
     },[])
 
     useFrame( () => {
-      if (!isMobileDevice) {
-        timeline.seek(timeline.duration() * scroll.offset)
-      }
+      timeline.seek(timeline.duration() * scroll.offset)
     })
 
   return (

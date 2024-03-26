@@ -103,6 +103,7 @@
 
 .canvas div div::-webkit-scrollbar {
   display: none;
+  -webkit-overflow-scrolling: touch;
 }
 .canvas div div {
   -ms-overflow-style: none;
